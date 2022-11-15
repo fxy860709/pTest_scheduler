@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect
 
 app = Flask(__name__,template_folder='app/templates/accounts')
 
@@ -12,10 +12,18 @@ def hello_world():
 
 @app.route('/login',methods=['GET','POST'])
 def login():
+    error = "输入错误"
     if request.method == 'GET':
         return render_template('login.html')
     elif request.method == 'POST':
-        return request.form
+        user = request.form.get('user')
+        password = request.form.get('password')
+        if user == 'fxy' and password == '123':
+            return redirect ('/home')
+        else:
+            return render_template('login.html',login_error=error)
+
+
 
 
 if __name__ == '__main__':
