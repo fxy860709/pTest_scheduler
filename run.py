@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirect
+from flask import Flask,render_template,request,redirect,url_for
 
 # 创建flask对象
 app = Flask(__name__,template_folder='app/templates/accounts')
@@ -30,10 +30,21 @@ def login():
         else:
             return render_template('login.html',login_error=error)
 
-@app.route('/env_list')
+@app.route('/env_list',endpoint='el')
 def register_env():
     # data_dict=Data_dict
     return render_template('env_list.html', data_dict=Data_dict)
+
+@app.route('/edit')
+def edit_env():
+    id=request.args.get('id')
+    print(id)
+    return "修改环境：{}".format(id)
+
+@app.route('/del/<int:id>')
+def del_env(id):
+    del Data_dict[id]
+    return redirect(url_for('el'))
 
 
 if __name__ == '__main__':
