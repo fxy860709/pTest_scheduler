@@ -6,19 +6,15 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
+{#  <div style="min-height: 300px !important; background-color: #5e72e4 !important; position: absolute !important; width: 100% !important;" class="bg-primary position-absolute w-100"></div>#}
+{#  <div class="min-height-300"></div>#}
 
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
-
   {% include "includes/sidenav.html" %}
-
   <main class="main-content position-relative border-radius-lg ">
-
     {% include "includes/navigation.html" %}
-
     <div class="container-fluid py-4">
-
       <div class="row">
-
         <div class="col-md-12">
           <div class="card">
             <div class="card-header pb-0">
@@ -81,7 +77,6 @@
 {#      {% include "includes/footer.html" %}#}
 
     </div>
-
   </main>
 {% endblock content %}
 

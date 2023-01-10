@@ -1,1 +1,5 @@
 ps_env
+ps_env
+*/__pycache__
+pTest_scheduler/__pycache__
+pTest_scheduler/views/__pycache__

@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="root@9.134.219.9:36000 agent" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="root@9.134.219.9:36000" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
     <serverData>
-      <paths name="root@9.134.219.9:36000 (3)">
+      <paths name="root@9.134.219.9:36000">
         <serverdata>
           <mappings>
             <mapping deploy="/home/projects/pTest_scheduler" local="$PROJECT_DIR$" />
           </mappings>
-        </serverdata>
-      </paths>
-      <paths name="root@9.134.219.9:36000 agent">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/home/projects/pTest_scheduler" local="$PROJECT_DIR$" />
-          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/ps_env" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
