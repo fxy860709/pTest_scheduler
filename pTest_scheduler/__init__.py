@@ -5,6 +5,7 @@ from flask import Flask
 from .views.penv import penv
 from .views.parse_json import parse_json
 from .views.analysis_log import analysis_log
+from .views.task import task
 
 def create_app():
     app = Flask(__name__, template_folder='templates')
@@ -16,7 +17,9 @@ def create_app():
         return 'index'
 
     app.register_blueprint(penv)
-    app.register_blueprint(parse_json)
-    app.register_blueprint(analysis_log)
+    app.register_blueprint(task)
+
+    # app.register_blueprint(parse_json)
+    # app.register_blueprint(analysis_log)
 
     return app

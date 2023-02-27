@@ -1,0 +1,89 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} 任务管理 {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+{#  <div style="min-height: 300px !important; background-color: #5e72e4 !important; position: absolute !important; width: 100% !important;" class="bg-primary position-absolute w-100"></div>#}
+{#  <div class="min-height-300"></div>#}
+
+  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+  {% include "includes/sidenav.html" %}
+  <main class="main-content position-relative border-radius-lg ">
+    {% include "includes/navigation.html" %}
+    <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="d-flex align-items-center">
+                <button class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#editEnvManageDialog">创建任务</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">task_id</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">任务名称</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">测试版本</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">运行环境</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">启动时间</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">完成时间</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">备注</th>
+{#                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">操作</th>#}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for env_info in env_infos %}
+                      <tr>
+                        <td class="align-middle text-center">
+                            <span class="text-secondary text-xs font-weight-bold">{{ env_info.id }}</span>
+                          </td>
+                          <td class="align-middle text-center">
+                            <span class="text-secondary text-xs font-weight-bold">{{ env_info.env_id }}</span>
+                          </td>
+                          <td class="align-middle text-center">
+                            <span class="text-secondary text-xs font-weight-bold">{{ env_info.env_ip }}</span>
+                          </td>
+                          <td class="align-middle text-center">
+                            <span class="text-secondary text-xs font-weight-bold">{{ env_info.env_cmc_dir }}</span>
+                          </td>
+                          <td class="align-middle text-center">
+                            <span class="text-secondary text-xs font-weight-bold">{{ env_info.env_manual }}</span>
+                          </td>
+                          <td class="align-middle">
+                            <button class="btn btn-outline-primary btn-sm ms-0 mt-3" data-bs-toggle="modal" data-bs-target="#editEnvManageDialog">修改</button>
+                            <button class="btn btn-outline-warning btn-sm ms-2 mt-3" data-bs-toggle="modal" data-bs-target="#editEnvManageDialog">删除</button>
+                            <button class="btn btn-outline-info btn-sm ms-2 mt-3" data-bs-toggle="modal" data-bs-target="#editEnvManageDialog">测试</button>
+                          </td>
+                        </tr>
+                      {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+      </div>
+
+      <div class="row mt-4">
+      </div>
+
+{#      {% include "includes/footer.html" %}#}
+
+    </div>
+  </main>
+{% endblock content %}
+
+{#  {% include "home/edit_env_manage_dialog.html" %}#}
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+
+{% endblock javascripts %}
