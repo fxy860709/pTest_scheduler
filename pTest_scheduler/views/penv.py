@@ -6,7 +6,6 @@ penv = Blueprint(
     __name__,
     url_prefix=''
 )
-
 @penv.route('/env_manage')
 def env_manage_index():
     env_infos = [
@@ -40,9 +39,9 @@ def env_manage_index():
 
 # penv = Blueprint('penv',__name__)
 #
-# @penv.route('/list')
-# def penv_list():
-#     return 'penvlist'
+@penv.route('/list')
+def penv_list():
+    return 'penvlist'
 #
 # @penv.route('/add')
 # def penv_add():
