@@ -6,8 +6,7 @@ task = Blueprint(
     __name__,
     url_prefix=''
 )
-html_path='/task_manage'
-@task.route(html_path)
+@task.route('/task_manage')
 def task_manage_index():
     task_infos = [
         {
@@ -34,7 +33,7 @@ def task_manage_index():
 
         }
     ]
-    return render_template('pages/task_manage.html', segment='index', env_infos=task_infos, html_path=html_path)
+    return render_template('pages/task_manage.html', segment='index', env_infos=task_infos)
 
     # return render_template('pages/env_manage.html', segment='index', navigation_name="环境管理", env_infos='env_infos')
 
