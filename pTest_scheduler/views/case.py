@@ -33,7 +33,7 @@ def task_manage_index():
 
         }
     ]
-    return render_template('pages/case_manage.html', segment='index', env_infos=task_infos)
+    return render_template('pages/case_manage.html', segment='case_manage', env_infos=task_infos)
 
     # return render_template('pages/env_manage.html', segment='index', navigation_name="环境管理", env_infos='env_infos')
 

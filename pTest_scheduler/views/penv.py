@@ -33,7 +33,7 @@ def env_manage_index():
 
         }
     ]
-    return render_template('pages/env_manage.html', segment='index', env_infos=env_infos)
+    return render_template('pages/env_manage.html', segment='env_manage', env_infos=env_infos)
 
     # return render_template('pages/env_manage.html', segment='index', navigation_name="环境管理", env_infos='env_infos')
 
