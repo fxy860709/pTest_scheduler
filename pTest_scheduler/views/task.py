@@ -33,9 +33,8 @@ def task_manage_index():
 
         }
     ]
-    return render_template('pages/task_manage.html', segment='task_manage', env_infos=task_infos)
+    return render_template('pages/task_manage.html', segment='task_manage', navigation_name="任务管理", env_infos=task_infos)
 
-    # return render_template('pages/env_manage.html', segment='index', navigation_name="环境管理", env_infos='env_infos')
 
 # penv = Blueprint('penv',__name__)
 #
